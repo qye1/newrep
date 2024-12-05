@@ -10,4 +10,4 @@ COPY . /app
 
 RUN pip install --no-cache-dir keyboard
 
-CMD ["python", "your_script.py"]
+CMD ["python", "os6.2.py"]
