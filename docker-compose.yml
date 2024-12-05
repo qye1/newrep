@@ -8,7 +8,7 @@ services:
     depends_on:
       - db
     environment:
-      SQLALCHEMY_DATABASE_URI: postgres://varve:12345@db/dbtest
+      SQLALCHEMY_DATABASE_URI: postgres://carve:12345@db/dbtest
 
   db:
     image: postgres:latest
