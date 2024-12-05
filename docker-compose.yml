@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  keyboard_listener:
+    build: .
+    tty: true # Обеспечить работу терминала
+    stdin_open: true # Открываем стандартный ввод
+    environment:
+      - PYTHONUNBUFFERED=1 # Для немедленного вывода
