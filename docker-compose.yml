@@ -1,9 +1,20 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  keyboard_listener:
+  web:
     build: .
-    tty: true
-    stdin_open: true 
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
     environment:
-      - PYTHONUNBUFFERED=1
+      SQLALCHEMY_DATABASE_URI: postgres://varve:12345@db/dbtest
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: carve
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: dbtest
+    ports:
+      - "5432:5432"
